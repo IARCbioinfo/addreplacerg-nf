@@ -1,4 +1,6 @@
-# Apply [`samtools addreplacerg`](http://www.htslib.org/doc/samtools.html) to add a new read group and assign all reads to it in a set of BAM files using their names.
+# Adds and replaces read group tags in BAM files
+
+Apply [`samtools addreplacerg`](http://www.htslib.org/doc/samtools.html) to add a new read group and assign all reads to it in a set of BAM files using their names.
 
 This scripts takes a set of [BAM files](https://samtools.github.io/hts-specs/) (called `*.bam`) grouped in a single folder as an input.
 
