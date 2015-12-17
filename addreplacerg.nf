@@ -42,7 +42,7 @@ bam = Channel.fromPath( params.bam_folder+'/*.bam' )
 
 process addreplacerg {
 
-	publishDir params.out_folder, mode: 'move'
+	publishDir params.bam_folder, mode: 'move'
 	
 	tag { sample_name }
 	
