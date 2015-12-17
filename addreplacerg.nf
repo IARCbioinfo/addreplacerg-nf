@@ -4,6 +4,8 @@
 
 /*  Help section (option --help in input)  */
 
+params.out_folder = params.bam_folder // if not provided, outputs will be held on the input bam folder
+
 if (params.help) {
     log.info ''
     log.info '------------------------------------------------------------------'
@@ -19,7 +21,9 @@ if (params.help) {
     log.info '    nextflow run iarcbioinfo/addreplacerg --bam_folder BAM/'
     log.info ''
     log.info 'Mandatory arguments:'
-    log.info '    --bam_folder   FOLDER                  Folder containing BAM files'
+    log.info '    --bam_folder   FOLDER                  Folder containing input BAM files'
+    log.info 'Options:'   
+    log.info '    --out_folder   OUTPUT FOLDER           Output directory, by default input BAM folder.'
     log.info ''
     exit 1
 }
@@ -36,13 +40,14 @@ log.info 'This is free software, and you are welcome to redistribute it'
 log.info 'under certain conditions; see LICENSE.txt for details.'
 log.info '------------------------------------------------------------------'
 log.info "Input BAM folder (--bam_folder)                                 : ${params.bam_folder}"
+log.info "Output folder (--out_folder)                                    : ${params.out_folder}"
 log.info "\n"
 
 bam = Channel.fromPath( params.bam_folder+'/*.bam' )
 
 process addreplacerg {
 
-	publishDir params.bam_folder, mode: 'move'
+	publishDir params.out_folder, mode: 'move'
 	
 	tag { sample_name }
 	
