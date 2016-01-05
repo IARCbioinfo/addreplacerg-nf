@@ -35,7 +35,6 @@ nextflow run iarcbioinfo/addreplacerg --bam_folder BAM/
 By default, BAM files produced are output in the same folder as the input folder. One can also specify the output folder by adding the optional argument `--out_folder BAM_RG` to the above command line for example.
 
 If you don't have `samtools` you can use the docker image we provide containing it using:
-Simply use:
 ```bash
 nextflow run iarcbioinfo/addreplacerg -with-docker iarcbioinfo/addreplacerg --bam_folder BAM/
 ```
