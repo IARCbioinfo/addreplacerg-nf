@@ -29,14 +29,14 @@ samtools addreplacerg -r "@RG\tID:file_name\tPG:samtools addreplacerg\tSM:file_n
 
 Simply use:
 ```bash
-nextflow run iarcbioinfo/addreplacerg --bam_folder BAM/
+nextflow run iarcbioinfo/addreplacerg-nf --bam_folder BAM/
 ```
 
 By default, BAM files produced are output in the same folder as the input folder. One can also specify the output folder by adding the optional argument `--out_folder BAM_RG` to the above command line for example.
 
 If you don't have `samtools` you can use the docker image we provide containing it using:
 ```bash
-nextflow run iarcbioinfo/addreplacerg -with-docker iarcbioinfo/addreplacerg --bam_folder BAM/
+nextflow run iarcbioinfo/addreplacerg-nf -with-docker --bam_folder BAM/
 ```
 
 Installing [docker](https://www.docker.com) is very system specific (but quite easy in most cases), follow  [docker documentation](https://docs.docker.com/installation/). Also follow the optional configuration step called `Create a Docker group` in their documentation.
