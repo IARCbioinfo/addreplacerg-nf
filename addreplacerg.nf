@@ -4,6 +4,8 @@
 
 /*  Help section (option --help in input)  */
 
+params.bam_folder = null
+params.help = null
 params.out_folder = params.bam_folder // if not provided, outputs will be held on the input bam folder
 
 if (params.help) {
