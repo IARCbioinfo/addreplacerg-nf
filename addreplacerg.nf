@@ -62,6 +62,6 @@ process addreplacerg {
 	shell:
 	sample_name = bam.baseName
 	'''
-	samtools addreplacerg -r "@RG\tID:!{sample_name}\tPG:samtools addreplacerg\tSM:!{sample_name}" !{bam} -o !{sample_name}_RG.bam
+	samtools addreplacerg -r "@RG\tID:!{sample_name}\tPG:samtools addreplacerg\tSM:!{sample_name}" !{bam} -O b -o !{sample_name}_RG.bam
 	'''
 }
